@@ -23,7 +23,7 @@ public class PaymentProcessorTest {
 
     @Test
     void shouldApprovePayment_WhenAccountIsActiveAndUnderLimit() {
-        // TODO: Тест 1. Успешный платеж.
+        //  Тест 1. Успешный платеж.
         // Подсказка: используй when(...).thenReturn(...) для настройки мока
         when(registryMock.isAccountActive("babels")).thenReturn(true);
 
@@ -36,7 +36,7 @@ public class PaymentProcessorTest {
 
     @Test
     void shouldRejectPayment_WhenAccountIsInactive() {
-        // TODO: Тест 2. Неактивный аккаунт.
+        //  Тест 2. Неактивный аккаунт.
         when(registryMock.isAccountActive("blocked-user")).thenReturn(false);
 
         boolean result = processor.processPayment ("blocked-user",50);
@@ -46,7 +46,7 @@ public class PaymentProcessorTest {
 
     @Test
     void shouldRejectPaymentAndAlertSecurity_WhenAmountExceedsLimit() {
-        // TODO: Тест 3. Превышение лимита + проверка вызова метода через verify(...)
+        //  Тест 3. Превышение лимита + проверка вызова метода через verify(...)
 
         when(registryMock.isAccountActive("hacker")).thenReturn(true);
 
